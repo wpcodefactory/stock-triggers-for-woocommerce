@@ -1,0 +1,247 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Stock Triggers for WooCommerce Pro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-16 16:52+0000\n"
+"PO-Revision-Date: 2021-08-16 17:30+0000\n"
+"Last-Translator: VXXSFXXS\n"
+"Language-Team: 简体中文\n"
+"Language: zh-CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.3; wp-5.8"
+
+#: includes/class-alg-wc-stock-triggers-core.php:130
+#, php-format
+msgid "Adjusted stock: %s"
+msgstr "已调整库存：%s"
+
+#: includes/class-alg-wc-stock-triggers-core.php:205 
+#: includes/class-alg-wc-stock-triggers-core.php:206 
+#: includes/class-alg-wc-stock-triggers-core.php:207 
+#: includes/class-alg-wc-stock-triggers-core.php:208 
+#: includes/class-alg-wc-stock-triggers-core.php:209 
+#: includes/class-alg-wc-stock-triggers-core.php:210 
+#: includes/class-alg-wc-stock-triggers-core.php:211 
+#: includes/pro/class-alg-wc-stock-triggers-pro.php:57
+#, php-format
+msgid "Order status: %s"
+msgstr "订单状态：%s"
+
+#: includes/class-alg-wc-stock-triggers-core.php:205 
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:141
+msgctxt "Order status"
+msgid "Cancelled"
+msgstr "已取消"
+
+#: includes/class-alg-wc-stock-triggers-core.php:206 
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:140
+msgctxt "Order status"
+msgid "Completed"
+msgstr "已完成"
+
+#: includes/class-alg-wc-stock-triggers-core.php:207 
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:139
+msgctxt "Order status"
+msgid "On hold"
+msgstr "保留"
+
+#: includes/class-alg-wc-stock-triggers-core.php:208 
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:137
+msgctxt "Order status"
+msgid "Pending payment"
+msgstr "待付款"
+
+#: includes/class-alg-wc-stock-triggers-core.php:209 
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:138
+msgctxt "Order status"
+msgid "Processing"
+msgstr "正在处理"
+
+#: includes/class-alg-wc-stock-triggers-core.php:210 
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:143
+msgctxt "Order status"
+msgid "Failed"
+msgstr "失败订单"
+
+#: includes/class-alg-wc-stock-triggers-core.php:211 
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:142
+msgctxt "Order status"
+msgid "Refunded"
+msgstr "已退款"
+
+#: includes/class-alg-wc-stock-triggers-core.php:212
+msgid "Payment complete"
+msgstr "支付完成"
+
+#: includes/class-alg-wc-stock-triggers-core.php:213
+msgid "Checkout order processed"
+msgstr "订单已结账"
+
+#: includes/class-alg-wc-stock-triggers-core.php:219
+msgid "Decrease Stock"
+msgstr "减少库存设置"
+
+#: includes/class-alg-wc-stock-triggers-core.php:220
+msgid ""
+"Stock will be decreased only once, on whichever trigger is called first."
+msgstr "无论哪个触发条件先被调用，库存只会减少一次。"
+
+#: includes/class-alg-wc-stock-triggers-core.php:230
+msgid "Increase Stock"
+msgstr "增加库存设置"
+
+#: includes/class-alg-wc-stock-triggers-core.php:231
+msgid ""
+"Stock will be increased only once, on whichever trigger is called first."
+msgstr "无论哪个触发条件先被调用，库存只会增加一次。"
+
+#: includes/class-alg-wc-stock-triggers-core.php:232
+msgid ""
+"Please note that only stock which was previously decreased can be increased."
+msgstr "请注意：只有在先有减少库存记录时，增加库存条件才会被触发。"
+
+#: includes/class-alg-wc-stock-triggers.php:131
+msgid "Settings"
+msgstr "设置"
+
+#: includes/class-alg-wc-stock-triggers.php:134
+msgid "Go Pro"
+msgstr "获取 Pro 版"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:25
+msgid "General"
+msgstr "常规"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:44
+msgctxt "Stock Triggers 设置"
+msgid "Stock Triggers Options"
+msgstr "Stock Triggers 设置选项"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:49 
+#: includes/settings/class-alg-wc-stock-triggers-settings.php:25
+msgid "Stock Triggers"
+msgstr "Stock Triggers"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:50
+msgid "Enable plugin"
+msgstr "启用插件"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:71
+msgid "Enable section"
+msgstr "启用此部分"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:77
+msgid "Triggers"
+msgstr "触发条件"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:87
+msgid "Custom triggers"
+msgstr "自定义触发条件"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:88
+msgid "One action per line."
+msgstr "每行填写一条动作。"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:89
+#, php-format
+msgid "E.g.: %s"
+msgstr "譬如：%s"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:99
+msgid "Advanced"
+msgstr "高级"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:100
+msgid "Force order stock update"
+msgstr "强制更新订单库存"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:101 
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:123 
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:173
+msgid "Enable"
+msgstr "启用"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:102
+msgid "Enable this if you are having issues with order stock not updating."
+msgstr "请在遇到订单库存未更新故障时，启用此选项。"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:116
+msgid "Admin Order Options"
+msgstr "管理员手动操作设置"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:121
+msgid "Adjust line item product stock"
+msgstr "调整手动订单中的产品库存"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:122
+msgid ""
+"Set order status(es) when line item product stock should be adjusted on "
+"admin order creation."
+msgstr "设置订单状态，当管理员手动创建订单时，触发此订单状态即会调整订单库存。"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:129
+msgid "Order status(es)"
+msgstr "将触发调整库存的订单状态"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:147
+msgid "Admin new order"
+msgstr "管理员手动创建订单"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:148
+msgid ""
+"Stock action performed when admin creates a new order and adds products via "
+"\"Add item(s) > Add product(s)\" buttons."
+msgstr "当管理员手动创建订单，并通过 “添加项目 > 添加产品” 按钮为订单增加产品时，库存应该如何变化。"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:154
+msgid "Default"
+msgstr "默认"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:155
+msgid "Increase"
+msgstr "增加"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:156
+msgid "Decrease"
+msgstr "减少"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:167
+msgid "Advanced Options"
+msgstr "高级选项"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:172
+msgid "Debug"
+msgstr "Debug 排查"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:174
+#, php-format
+msgid "Will add a log to %s."
+msgstr "开启则会记录日志 log 到 %s。"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:175
+msgid "WooCommerce > Status > Logs"
+msgstr "WooCommerce > 状态 > 日志"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings.php:42
+msgid "Reset Settings"
+msgstr "重设选项"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings.php:47
+msgid "Reset section settings"
+msgstr "重置所有插件选项"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings.php:48
+msgid "Reset"
+msgstr "重置"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings.php:49
+msgid "Check the box and save changes to reset."
+msgstr "勾选单选框，并保存更改，以便重置插件选项设置。"
+
+#: includes/settings/class-alg-wc-stock-triggers-settings.php:88
+msgid "Your settings have been reset."
+msgstr "您的插件选项已经重置。"

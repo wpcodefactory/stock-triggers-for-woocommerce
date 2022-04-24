@@ -1,0 +1,316 @@
+#: includes/class-alg-wc-stock-triggers-admin.php:136
+#, php-format
+msgid "Adjusted stock: %s"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-admin.php:168
+msgid "stock decrease"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-admin.php:169
+msgid "stock increase"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-admin.php:171
+#, php-format
+msgid "%d orders processed (%s)."
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-admin.php:203
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:93
+msgid "Decrease stock"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-admin.php:204
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:94
+msgid "Increase stock"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:85
+#: includes/class-alg-wc-stock-triggers-core.php:86
+#: includes/class-alg-wc-stock-triggers-core.php:87
+#: includes/class-alg-wc-stock-triggers-core.php:88
+#: includes/class-alg-wc-stock-triggers-core.php:89
+#: includes/class-alg-wc-stock-triggers-core.php:90
+#: includes/class-alg-wc-stock-triggers-core.php:91
+#: includes/pro/class-alg-wc-stock-triggers-pro.php:57
+#, php-format
+msgid "Order status: %s"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:85
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:71
+msgctxt "Order status"
+msgid "Cancelled"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:86
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:70
+msgctxt "Order status"
+msgid "Completed"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:87
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:69
+msgctxt "Order status"
+msgid "On hold"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:88
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:67
+msgctxt "Order status"
+msgid "Pending payment"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:89
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:68
+msgctxt "Order status"
+msgid "Processing"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:90
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:73
+msgctxt "Order status"
+msgid "Failed"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:91
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:72
+msgctxt "Order status"
+msgid "Refunded"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:92
+msgid "Payment complete"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:93
+msgid "Checkout order processed"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:99
+msgid "Decrease Stock"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:100
+msgid ""
+"Stock will be decreased only once, on whichever trigger is called first."
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:110
+msgid "Increase Stock"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:111
+msgid ""
+"Stock will be increased only once, on whichever trigger is called first."
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers-core.php:112
+msgid ""
+"Please note that only stock which was previously decreased can be increased."
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers.php:131
+msgid "Settings"
+msgstr ""
+
+#: includes/class-alg-wc-stock-triggers.php:134
+msgid "Go Pro"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:25
+msgid "Admin"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:46
+msgid "Admin Order Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:51
+msgid "Adjust line item product stock"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:52
+msgid ""
+"Set order status(es) when line item product stock should be adjusted on "
+"admin order creation."
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:53
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:91
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:114
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:118
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:127
+msgid "Enable"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:59
+msgid "Order status(es)"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:77
+msgid "Admin new order"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:78
+msgid ""
+"Stock action performed when admin creates a new order and adds products via "
+"\"Add item(s) > Add product(s)\" buttons."
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:84
+msgid "Default"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:85
+msgid "Increase"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:86
+msgid "Decrease"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:90
+msgid "Bulk actions"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:92
+#, php-format
+msgid ""
+"Will add \"%s\" and \"%s\" actions to the \"Bulk actions\" dropdown in %s."
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:95
+msgid "admin orders list"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:108
+msgid "Advanced Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:113
+msgid "Debug"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:115
+#, php-format
+msgid "Will add a log to %s."
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:116
+msgid "WooCommerce > Status > Logs"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:25
+msgid "General"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:51
+#, php-format
+msgid "Product #%d"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:62
+msgid "Stock Triggers Options"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:67
+#: includes/settings/class-alg-wc-stock-triggers-settings.php:25
+msgid "Stock Triggers"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:68
+msgid "Enable plugin"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:89
+msgid "Enable section"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:95
+msgid "Triggers"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:105
+msgid "Custom triggers"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:106
+msgid "One action per line."
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:107
+#, php-format
+msgid "E.g.: %s"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:117
+msgid "Remove standard triggers"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:119
+#, php-format
+msgid "Removes standard WooCommerce \"%s\" triggers."
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:125
+msgid "Advanced"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:126
+msgid "Force order stock update"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:128
+msgid "Enable this if you are having issues with order stock not updating."
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:134
+msgid "Require products"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:135
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:150
+msgid ""
+"Select products which have to be in the order for stock action to be "
+"triggered."
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:136
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:151
+msgid "All products in the order must match the selection."
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:137
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:152
+msgid "Ignored if empty."
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:144
+msgid "Search for a product&hellip;"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-general.php:149
+msgid "Require product categories"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings.php:43
+msgid "Reset Settings"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings.php:48
+msgid "Reset section settings"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings.php:49
+msgid "Reset"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings.php:50
+msgid "Check the box and save changes to reset."
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings.php:89
+msgid "Your settings have been reset."
+msgstr ""
