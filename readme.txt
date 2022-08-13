@@ -2,8 +2,8 @@
 Contributors: algoritmika, anbinder
 Tags: woocommerce, stock, woo commerce
 Requires at least: 4.4
-Tested up to: 5.9
-Stable tag: 1.6.1
+Tested up to: 6.0
+Stable tag: 1.6.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -43,6 +43,11 @@ In addition, there are a number of **admin** options, like running decrease or i
 3. Start by visiting plugin settings at "WooCommerce > Settings > Stock Triggers".
 
 == Changelog ==
+
+= 1.6.2 - 13/08/2022 =
+* Dev - Remove standard triggers - "B2BKing Pro" compatibility added.
+* WC tested up to: 6.8.
+* Tested up to: 6.0.
 
 = 1.6.1 - 21/04/2022 =
 * Admin settings - "Admin" section added: "Admin Order Options" and "Advanced Options" moved from the "General" settings section.

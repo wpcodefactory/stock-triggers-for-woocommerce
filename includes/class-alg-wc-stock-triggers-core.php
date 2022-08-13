@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Core Class
  *
- * @version 1.6.0
+ * @version 1.6.2
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -122,7 +122,7 @@ class Alg_WC_Stock_Triggers_Core {
 	/**
 	 * process_triggers.
 	 *
-	 * @version 1.6.0
+	 * @version 1.6.2
 	 * @since   1.0.0
 	 *
 	 * @todo    [next] (dev) `section_do_remove`: maybe we need to remove `wc_reduce_stock_levels` and `wc_increase_stock_levels` functions as well (optionally at least)?
@@ -145,8 +145,14 @@ class Alg_WC_Stock_Triggers_Core {
 					// Removing actions
 					$diff = array_diff( array_keys( $this->triggers ), $triggers );
 					foreach ( $diff as $trigger ) {
+						// WooCommerce
 						while ( false !== ( $priority = has_filter( $trigger, $section_data['func'] ) ) ) {
 							remove_action( $trigger, $section_data['func'], $priority );
+						}
+						// B2BKing Pro (webwizards.dev)
+						$b2bking_func = str_replace( 'wc_', 'b2bking_', $section_data['func'] );
+						while ( false !== ( $priority = has_filter( $trigger, $b2bking_func ) ) ) {
+							remove_action( $trigger, $b2bking_func, $priority );
 						}
 					}
 				}
