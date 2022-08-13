@@ -1,5 +1,5 @@
 === Stock Triggers for WooCommerce ===
-Contributors: algoritmika, anbinder
+Contributors: wpcodefactory, algoritmika, anbinder, karzin
 Tags: woocommerce, stock, woo commerce
 Requires at least: 4.4
 Tested up to: 6.0
@@ -46,6 +46,7 @@ In addition, there are a number of **admin** options, like running decrease or i
 
 = 1.6.2 - 13/08/2022 =
 * Dev - Remove standard triggers - "B2BKing Pro" compatibility added.
+* Deploy script added.
 * WC tested up to: 6.8.
 * Tested up to: 6.0.
 
