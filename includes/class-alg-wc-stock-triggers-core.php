@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Core Class
  *
- * @version 1.6.2
+ * @version 1.6.3
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -200,24 +200,26 @@ class Alg_WC_Stock_Triggers_Core {
 	/**
 	 * wc_maybe_reduce_stock_levels.
 	 *
-	 * @version 1.6.0
+	 * @version 1.6.3
 	 * @since   1.6.0
 	 */
 	function wc_maybe_reduce_stock_levels( $order_id ) {
 		if ( $this->is_order_valid( $order_id, 'decrease' ) ) {
-			wc_maybe_reduce_stock_levels( $order_id );
+			$func = apply_filters( 'alg_wc_stock_triggers_function_decrease', 'wc_maybe_reduce_stock_levels', $order_id );
+			$func( $order_id );
 		}
 	}
 
 	/**
 	 * wc_maybe_increase_stock_levels.
 	 *
-	 * @version 1.6.0
+	 * @version 1.6.3
 	 * @since   1.6.0
 	 */
 	function wc_maybe_increase_stock_levels( $order_id ) {
 		if ( $this->is_order_valid( $order_id, 'increase' ) ) {
-			wc_maybe_increase_stock_levels( $order_id );
+			$func = apply_filters( 'alg_wc_stock_triggers_function_increase', 'wc_maybe_increase_stock_levels', $order_id );
+			$func( $order_id );
 		}
 	}
 
