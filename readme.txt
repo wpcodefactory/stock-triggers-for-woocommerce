@@ -3,7 +3,7 @@ Contributors: wpcodefactory, algoritmika, anbinder, karzin
 Tags: woocommerce, stock, woo commerce
 Requires at least: 4.4
 Tested up to: 6.2
-Stable tag: 1.6.3
+Stable tag: 1.6.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -43,6 +43,9 @@ In addition, there are a number of **admin** options, like running decrease or i
 3. Start by visiting plugin settings at "WooCommerce > Settings > Stock Triggers".
 
 == Changelog ==
+
+= 1.6.4 - 22/05/2023 =
+* Plugin author updated.
 
 = 1.6.3 - 18/05/2023 =
 * Dev - Developers - `alg_wc_stock_triggers_function_decrease` and `alg_wc_stock_triggers_function_increase` filters added.
