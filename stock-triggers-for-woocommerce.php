@@ -3,12 +3,12 @@
 Plugin Name: Stock Triggers for WooCommerce
 Plugin URI: https://wpfactory.com/item/stock-triggers-for-woocommerce/
 Description: Automatic product stock increase/decrease actions for WooCommerce.
-Version: 1.6.4
+Version: 1.6.5
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: stock-triggers-for-woocommerce
 Domain Path: /langs
-WC tested up to: 7.7
+WC tested up to: 7.8
 */
 
 defined( 'ABSPATH' ) || exit;
