@@ -45,7 +45,7 @@ In addition, there are a number of **admin** options, like running decrease or i
 == Changelog ==
 
 = 1.6.6 - 11/07/2023 =
-* Fix - Admin settings - Possible PHP warining fixed.
+* Fix - Admin settings - Possible PHP warning fixed.
 
 = 1.6.5 - 18/06/2023 =
 * WC tested up to: 7.8.
