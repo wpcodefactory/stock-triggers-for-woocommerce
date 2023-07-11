@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Core Class
  *
- * @version 1.6.3
+ * @version 1.6.6
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -13,6 +13,22 @@ defined( 'ABSPATH' ) || exit;
 if ( ! class_exists( 'Alg_WC_Stock_Triggers_Core' ) ) :
 
 class Alg_WC_Stock_Triggers_Core {
+
+	/**
+	 * triggers.
+	 *
+	 * @version 1.6.6
+	 * @since   1.0.0
+	 */
+	public $triggers;
+
+	/**
+	 * sections.
+	 *
+	 * @version 1.6.6
+	 * @since   1.0.0
+	 */
+	public $sections;
 
 	/**
 	 * Constructor.
@@ -36,14 +52,18 @@ class Alg_WC_Stock_Triggers_Core {
 	 * @todo    [maybe] (feature) add "Disable all triggers" option (i.e. "No triggers will be called for stock increase or decrease"): `if ( 'yes' === get_option( 'alg_wc_stock_triggers_never_reduce', 'no' ) ) { add_filter( 'woocommerce_payment_complete_reduce_order_stock', '__return_false' ); } else { $this->process_triggers(); }`?
 	 */
 	function init() {
+
 		// Init data
 		$this->init_data();
+
 		// Check if plugin is enabled
 		if ( 'no' === get_option( 'alg_wc_stock_triggers_plugin_enabled', 'yes' ) ) {
 			return;
 		}
+
 		// Process triggers
 		$this->process_triggers();
+
 		// Force order stock update
 		$can_update_order_stock = get_option( 'alg_wc_stock_triggers_force_can_update_order_stock', array() );
 		foreach ( array( 'decrease' => 'woocommerce_can_reduce_order_stock', 'increase' => 'woocommerce_can_restore_order_stock' ) as $option => $hook ) {
@@ -51,8 +71,10 @@ class Alg_WC_Stock_Triggers_Core {
 				add_filter( $hook, '__return_true', PHP_INT_MAX );
 			}
 		}
+
 		// Admin
 		require_once( 'class-alg-wc-stock-triggers-admin.php' );
+
 	}
 
 	/**
@@ -80,6 +102,7 @@ class Alg_WC_Stock_Triggers_Core {
 	 * @todo    [maybe] (dev) `triggers`: add `woocommerce_checkout_process`?
 	 */
 	function init_data() {
+
 		// Triggers
 		$this->triggers = apply_filters( 'alg_wc_stock_triggers_list', array(
 			'woocommerce_order_status_cancelled'   => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Cancelled', 'Order status', 'woocommerce' ) ),
@@ -93,6 +116,7 @@ class Alg_WC_Stock_Triggers_Core {
 			'woocommerce_checkout_order_processed' => __( 'Checkout order processed', 'stock-triggers-for-woocommerce' ),
 		) );
 		asort( $this->triggers );
+
 		// Sections
 		$this->sections = array(
 			'decrease' => array(
@@ -117,6 +141,7 @@ class Alg_WC_Stock_Triggers_Core {
 				),
 			),
 		);
+
 	}
 
 	/**
@@ -128,19 +153,25 @@ class Alg_WC_Stock_Triggers_Core {
 	 * @todo    [next] (dev) `section_do_remove`: maybe we need to remove `wc_reduce_stock_levels` and `wc_increase_stock_levels` functions as well (optionally at least)?
 	 */
 	function process_triggers() {
+
 		$section_enabled   = get_option( 'alg_wc_stock_triggers_enabled',   array() );
 		$section_triggers  = get_option( 'alg_wc_stock_triggers',           array() );
 		$section_do_remove = get_option( 'alg_wc_stock_triggers_do_remove', array() );
+
 		foreach ( $this->sections as $section_id => $section_data ) {
+
 			if ( isset( $section_enabled[ $section_id ] ) && 'yes' === $section_enabled[ $section_id ] ) {
+
 				$triggers = ( isset( $section_triggers[ $section_id ] ) ? $section_triggers[ $section_id ] : array() );
 				$triggers = apply_filters( 'alg_wc_stock_triggers_section_triggers', $triggers, $section_id );
+
 				// Adding actions
 				foreach ( $triggers as $trigger ) {
 					if ( ! has_filter( $trigger, array( $this, $section_data['func'] ) ) ) {
 						add_action( $trigger, array( $this, $section_data['func'] ) );
 					}
 				}
+
 				if ( ! isset( $section_do_remove[ $section_id ] ) || 'yes' === $section_do_remove[ $section_id ] ) {
 					// Removing actions
 					$diff = array_diff( array_keys( $this->triggers ), $triggers );
@@ -156,8 +187,11 @@ class Alg_WC_Stock_Triggers_Core {
 						}
 					}
 				}
+
 			}
+
 		}
+
 	}
 
 	/**
@@ -169,6 +203,7 @@ class Alg_WC_Stock_Triggers_Core {
 	 * @todo    [now] (feature) require at least one (vs "require all", as it is now)
 	 */
 	function is_order_valid( $order_id, $section_id ) {
+
 		// Products
 		$require_product = get_option( 'alg_wc_stock_triggers_require_product', array() );
 		if ( ! empty( $require_product[ $section_id ] ) && ( $order = wc_get_order( $order_id ) ) ) {
@@ -178,6 +213,7 @@ class Alg_WC_Stock_Triggers_Core {
 				}
 			}
 		}
+
 		// Product cats
 		$require_product_cat = get_option( 'alg_wc_stock_triggers_require_product_cat', array() );
 		if ( ! empty( $require_product_cat[ $section_id ] ) && ( $order = wc_get_order( $order_id ) ) ) {
@@ -193,8 +229,10 @@ class Alg_WC_Stock_Triggers_Core {
 				}
 			}
 		}
+
 		// Passed
 		return true;
+
 	}
 
 	/**

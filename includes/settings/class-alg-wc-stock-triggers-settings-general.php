@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - General Section Settings
  *
- * @version 1.6.1
+ * @version 1.6.6
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -29,7 +29,7 @@ class Alg_WC_Stock_Triggers_Settings_General extends Alg_WC_Stock_Triggers_Setti
 	/**
 	 * get_settings.
 	 *
-	 * @version 1.6.1
+	 * @version 1.6.6
 	 * @since   1.0.0
 	 *
 	 * @todo    [now] (desc) `alg_wc_stock_triggers_require_product` and `alg_wc_stock_triggers_require_product_cat`: better desc?
@@ -76,7 +76,8 @@ class Alg_WC_Stock_Triggers_Settings_General extends Alg_WC_Stock_Triggers_Setti
 			),
 		);
 
-		foreach ( alg_wc_stock_triggers()->core->sections as $id => $data ) {
+		$sections = ( ! empty( alg_wc_stock_triggers()->core->sections ) ? alg_wc_stock_triggers()->core->sections : array() );
+		foreach ( $sections as $id => $data ) {
 			$settings = array_merge( $settings, array(
 				array(
 					'title'    => $data['desc'],
