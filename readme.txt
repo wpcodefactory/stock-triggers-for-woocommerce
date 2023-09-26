@@ -1,9 +1,9 @@
 === Stock Triggers for WooCommerce ===
-Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
+Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
 Tags: woocommerce, stock, woo commerce
 Requires at least: 4.4
-Tested up to: 6.2
-Stable tag: 1.6.6
+Tested up to: 6.3
+Stable tag: 1.6.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -43,6 +43,11 @@ In addition, there are a number of **admin** options, like running decrease or i
 3. Start by visiting plugin settings at "WooCommerce > Settings > Stock Triggers".
 
 == Changelog ==
+
+= 1.6.7 - 27/09/2023 =
+* WC tested up to: 8.1.
+* Tested up to: 6.3.
+* Plugin update icon, banner.
 
 = 1.6.6 - 11/07/2023 =
 * Fix - Admin settings - Possible PHP warning fixed.
