@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Main Class
  *
- * @version 1.4.0
+ * @version 1.7.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -21,6 +21,14 @@ final class Alg_WC_Stock_Triggers {
 	 * @since 1.0.0
 	 */
 	public $version = ALG_WC_STOCK_TRIGGERS_VERSION;
+
+	/**
+	 * core.
+	 *
+	 * @version 1.7.0
+	 * @since   1.7.0
+	 */
+	public $core;
 
 	/**
 	 * @var   Alg_WC_Stock_Triggers The single instance of the class
@@ -49,7 +57,7 @@ final class Alg_WC_Stock_Triggers {
 	/**
 	 * Alg_WC_Stock_Triggers Constructor.
 	 *
-	 * @version 1.4.0
+	 * @version 1.7.0
 	 * @since   1.0.0
 	 *
 	 * @access  public
@@ -63,6 +71,9 @@ final class Alg_WC_Stock_Triggers {
 
 		// Set up localisation
 		add_action( 'init', array( $this, 'localize' ) );
+
+		// Declare compatibility with custom order tables for WooCommerce
+		add_action( 'before_woocommerce_init', array( $this, 'wc_declare_compatibility' ) );
 
 		// Pro
 		if ( 'stock-triggers-for-woocommerce-pro.php' === basename( ALG_WC_STOCK_TRIGGERS_FILE ) ) {
@@ -87,6 +98,26 @@ final class Alg_WC_Stock_Triggers {
 	 */
 	function localize() {
 		load_plugin_textdomain( 'stock-triggers-for-woocommerce', false, dirname( plugin_basename( ALG_WC_STOCK_TRIGGERS_FILE ) ) . '/langs/' );
+	}
+
+	/**
+	 * wc_declare_compatibility.
+	 *
+	 * @version 1.7.0
+	 * @since   1.7.0
+	 *
+	 * @see     https://github.com/woocommerce/woocommerce/wiki/High-Performance-Order-Storage-Upgrade-Recipe-Book#declaring-extension-incompatibility
+	 */
+	function wc_declare_compatibility() {
+		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+			$files = ( defined( 'ALG_WC_STOCK_TRIGGERS_FILE_FREE' ) ?
+				array( ALG_WC_STOCK_TRIGGERS_FILE, ALG_WC_STOCK_TRIGGERS_FILE_FREE ) :
+				array( ALG_WC_STOCK_TRIGGERS_FILE )
+			);
+			foreach ( $files as $file ) {
+				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', $file, true );
+			}
+		}
 	}
 
 	/**

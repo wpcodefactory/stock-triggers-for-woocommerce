@@ -1,9 +1,9 @@
 === Stock Triggers for WooCommerce ===
-Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
+Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
 Tags: woocommerce, stock, woo commerce
 Requires at least: 4.4
-Tested up to: 6.3
-Stable tag: 1.6.7
+Tested up to: 6.5
+Stable tag: 1.7.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -36,6 +36,10 @@ In addition, there are a number of **admin** options, like running decrease or i
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
 * [Visit plugin site](https://wpfactory.com/item/stock-triggers-for-woocommerce/).
 
+### &#8505; More ###
+
+* The plugin is **"High-Performance Order Storage (HPOS)"** compatible.
+
 == Installation ==
 
 1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
@@ -44,10 +48,17 @@ In addition, there are a number of **admin** options, like running decrease or i
 
 == Changelog ==
 
+= 1.7.0 - 20/06/2024 =
+* Dev - "High-Performance Order Storage (HPOS)" compatibility.
+* Dev - PHP 8.2 compatibility - "Creation of dynamic property is deprecated" notice fixed.
+* WC tested up to: 9.0.
+* Tested up to: 6.5.
+* WooCommerce added to the "Requires Plugins" (plugin header).
+
 = 1.6.7 - 27/09/2023 =
 * WC tested up to: 8.1.
 * Tested up to: 6.3.
-* Plugin update icon, banner.
+* Plugin icon, banner updated.
 
 = 1.6.6 - 11/07/2023 =
 * Fix - Admin settings - Possible PHP warning fixed.
@@ -119,7 +130,7 @@ In addition, there are a number of **admin** options, like running decrease or i
 * WC tested up to: 4.9.
 
 = 1.2.0 - 23/12/2020 =
-* Dev - General - "Restore stock on admin new order" option renamed to "Admin new order", converted to a select box (i.e. vs checkbox), and new "Decrease" option added.
+* Dev - General - "Restore stock on admin new order" option renamed to "Admin new order", converted to a select box (i.e., vs checkbox), and new "Decrease" option added.
 * Dev - Triggers - "Checkout order processed" trigger added.
 * Dev - Advanced - "Debug" option added.
 * WC tested up to: 4.8.

@@ -32,11 +32,11 @@ class Alg_WC_Stock_Triggers_Settings_Admin extends Alg_WC_Stock_Triggers_Setting
 	 * @version 1.6.1
 	 * @since   1.6.1
 	 *
-	 * @todo    [now] (desc) `alg_wc_stock_triggers_shop_order_bulk_actions`
-	 * @todo    [now] (desc) Adjust line item product stock: better desc?
-	 * @todo    [next] (dev) `alg_wc_stock_triggers_increase_on_ajax_order`: remove?
-	 * @todo    [maybe] (desc) `alg_wc_stock_triggers_increase_on_ajax_order`: better desc? e.g. 'Increase' to 'Restore'; was: __( 'By default in WooCommerce when admin creates a new order and adds products via "Add item(s) > Add product(s)" buttons, product stock is automatically decreased. Enable this option if you want it to be increased again, i.e. restored.', 'stock-triggers-for-woocommerce' )?
-	 * @todo    [maybe] (dev) `alg_wc_stock_triggers_adjust_line_item_product_stock_statuses`: add "Select all" / "Select none" buttons?
+	 * @todo    (desc) `alg_wc_stock_triggers_shop_order_bulk_actions`
+	 * @todo    (desc) Adjust line item product stock: better desc?
+	 * @todo    (dev) `alg_wc_stock_triggers_increase_on_ajax_order`: remove?
+	 * @todo    (desc) `alg_wc_stock_triggers_increase_on_ajax_order`: better desc? e.g., 'Increase' to 'Restore'; was: __( 'By default in WooCommerce when admin creates a new order and adds products via "Add item(s) > Add product(s)" buttons, product stock is automatically decreased. Enable this option if you want it to be increased again, i.e., restored.', 'stock-triggers-for-woocommerce' )?
+	 * @todo    (dev) `alg_wc_stock_triggers_adjust_line_item_product_stock_statuses`: add "Select all" / "Select none" buttons?
 	 */
 	function get_settings() {
 		$settings = array();
@@ -76,7 +76,7 @@ class Alg_WC_Stock_Triggers_Settings_Admin extends Alg_WC_Stock_Triggers_Setting
 			array(
 				'title'    => __( 'Admin new order', 'stock-triggers-for-woocommerce' ),
 				'desc_tip' => __( 'Stock action performed when admin creates a new order and adds products via "Add item(s) > Add product(s)" buttons.', 'stock-triggers-for-woocommerce' ),
-				'id'       => 'alg_wc_stock_triggers_increase_on_ajax_order', // mislabeled, should be e.g. `alg_wc_stock_triggers_ajax_order`
+				'id'       => 'alg_wc_stock_triggers_increase_on_ajax_order', // mislabeled, should be e.g., `alg_wc_stock_triggers_ajax_order`
 				'default'  => 'no',
 				'type'     => 'select',
 				'class'    => 'chosen_select',

@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Section Settings
  *
- * @version 1.4.0
+ * @version 1.7.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -13,6 +13,22 @@ defined( 'ABSPATH' ) || exit;
 if ( ! class_exists( 'Alg_WC_Stock_Triggers_Settings_Section' ) ) :
 
 class Alg_WC_Stock_Triggers_Settings_Section {
+
+	/**
+	 * id.
+	 *
+	 * @version 1.7.0
+	 * @since   1.7.0
+	 */
+	public $id;
+
+	/**
+	 * desc.
+	 *
+	 * @version 1.7.0
+	 * @since   1.7.0
+	 */
+	public $desc;
 
 	/**
 	 * Constructor.

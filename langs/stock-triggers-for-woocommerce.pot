@@ -1,27 +1,27 @@
-#: includes/class-alg-wc-stock-triggers-admin.php:136
+#: includes/class-alg-wc-stock-triggers-admin.php:163
 #, php-format
 msgid "Adjusted stock: %s"
 msgstr ""
 
-#: includes/class-alg-wc-stock-triggers-admin.php:168
+#: includes/class-alg-wc-stock-triggers-admin.php:195
 msgid "stock decrease"
 msgstr ""
 
-#: includes/class-alg-wc-stock-triggers-admin.php:169
+#: includes/class-alg-wc-stock-triggers-admin.php:196
 msgid "stock increase"
 msgstr ""
 
-#: includes/class-alg-wc-stock-triggers-admin.php:171
+#: includes/class-alg-wc-stock-triggers-admin.php:198
 #, php-format
 msgid "%d orders processed (%s)."
 msgstr ""
 
-#: includes/class-alg-wc-stock-triggers-admin.php:203
+#: includes/class-alg-wc-stock-triggers-admin.php:230
 #: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:93
 msgid "Decrease stock"
 msgstr ""
 
-#: includes/class-alg-wc-stock-triggers-admin.php:204
+#: includes/class-alg-wc-stock-triggers-admin.php:231
 #: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:94
 msgid "Increase stock"
 msgstr ""
@@ -33,7 +33,7 @@ msgstr ""
 #: includes/class-alg-wc-stock-triggers-core.php:112
 #: includes/class-alg-wc-stock-triggers-core.php:113
 #: includes/class-alg-wc-stock-triggers-core.php:114
-#: includes/pro/class-alg-wc-stock-triggers-pro.php:57
+#: includes/pro/class-alg-wc-stock-triggers-pro.php:65
 #, php-format
 msgid "Order status: %s"
 msgstr ""
@@ -111,11 +111,11 @@ msgid ""
 "Please note that only stock which was previously decreased can be increased."
 msgstr ""
 
-#: includes/class-alg-wc-stock-triggers.php:131
+#: includes/class-alg-wc-stock-triggers.php:162
 msgid "Settings"
 msgstr ""
 
-#: includes/class-alg-wc-stock-triggers.php:134
+#: includes/class-alg-wc-stock-triggers.php:165
 msgid "Go Pro"
 msgstr ""
 

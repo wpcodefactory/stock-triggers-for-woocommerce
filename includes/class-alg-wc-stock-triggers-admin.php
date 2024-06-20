@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Admin Class
  *
- * @version 1.6.0
+ * @version 1.7.0
  * @since   1.6.0
  *
  * @author  Algoritmika Ltd
@@ -15,33 +15,56 @@ if ( ! class_exists( 'Alg_WC_Stock_Triggers_Admin' ) ) :
 class Alg_WC_Stock_Triggers_Admin {
 
 	/**
+	 * on_ajax_order.
+	 *
+	 * @version 1.7.0
+	 * @since   1.7.0
+	 */
+	public $on_ajax_order;
+
+	/**
+	 * adjust_line_item_product_stock_data.
+	 *
+	 * @version 1.7.0
+	 * @since   1.7.0
+	 */
+	public $adjust_line_item_product_stock_data;
+
+	/**
 	 * Constructor.
 	 *
-	 * @version 1.6.0
+	 * @version 1.7.0
 	 * @since   1.6.0
 	 */
 	function __construct() {
+
 		// Adjust line item product stock
 		if ( 'yes' === get_option( 'alg_wc_stock_triggers_adjust_line_item_product_stock_enabled', 'no' ) ) {
 			add_action( 'woocommerce_before_save_order_items', array( $this, 'adjust_line_item_product_stock_start' ), 10, 2 );
 			add_action( 'woocommerce_before_save_order_item',  array( $this, 'adjust_line_item_product_stock' ), PHP_INT_MAX );
 			add_action( 'woocommerce_saved_order_items',       array( $this, 'adjust_line_item_product_stock_end' ), 10, 2 );
 		}
+
 		// Admin new order
 		if ( 'no' != ( $this->on_ajax_order = get_option( 'alg_wc_stock_triggers_increase_on_ajax_order', 'no' ) ) ) {
 			add_action( 'woocommerce_ajax_order_items_added', array( $this, 'ajax_order_items_added' ), PHP_INT_MAX, 2 );
 		}
+
 		// Bulk actions
 		if ( 'yes' === get_option( 'alg_wc_stock_triggers_shop_order_bulk_actions', 'no' ) ) {
-			add_filter( 'bulk_actions-edit-shop_order',        array( $this, 'add_bulk_actions' ) );
-			add_filter( 'handle_bulk_actions-edit-shop_order', array( $this, 'handle_bulk_actions' ), 10, 3 );
-			add_action( 'admin_notices',                       array( $this, 'bulk_actions_notice' ) );
+			add_filter( 'bulk_actions-edit-shop_order',                   array( $this, 'add_bulk_actions' ) );
+			add_filter( 'bulk_actions-woocommerce_page_wc-orders',        array( $this, 'add_bulk_actions' ) );
+			add_filter( 'handle_bulk_actions-edit-shop_order',            array( $this, 'handle_bulk_actions' ), 10, 3 );
+			add_filter( 'handle_bulk_actions-woocommerce_page_wc-orders', array( $this, 'handle_bulk_actions' ), 10, 3 );
+			add_action( 'admin_notices',                                  array( $this, 'bulk_actions_notice' ) );
 		}
+
 		// Debug
 		if ( 'yes' === get_option( 'alg_wc_stock_triggers_debug', 'no' ) ) {
 			add_action( 'woocommerce_reduce_order_stock',  array( $this, 'debug' ) );
 			add_action( 'woocommerce_restore_order_stock', array( $this, 'debug' ) );
 		}
+
 	}
 
 	/**
@@ -51,6 +74,7 @@ class Alg_WC_Stock_Triggers_Admin {
 	 * @since   1.2.0
 	 */
 	function debug( $order ) {
+
 		// Doing filters
 		$doing_filters = array();
 		foreach ( alg_wc_stock_triggers()->core->triggers as $trigger => $trigger_title ) {
@@ -59,6 +83,7 @@ class Alg_WC_Stock_Triggers_Admin {
 			}
 		}
 		$doing_filters = ( ! empty( $doing_filters ) ? implode( ', ', $doing_filters ) : 'n/a' );
+
 		// Order items
 		$order_items = array();
 		foreach ( $order->get_items() as $item ) {
@@ -69,9 +94,11 @@ class Alg_WC_Stock_Triggers_Admin {
 			$order_items[]      = sprintf( 'item_stock_reduced: %s (item_id: %s)', ( '' != $item_stock_reduced ? $item_stock_reduced : 0 ), $item->get_id() );
 		}
 		$order_items = ( ! empty( $order_items ) ? implode( ', ', $order_items ) : 'n/a' );
+
 		// Final message
 		$message = sprintf( 'order_id: %s; current_filter: %s; doing_filters: %s; order_items: %s', $order->get_id(), current_filter(), $doing_filters, $order_items );
 		alg_wc_stock_triggers()->core->add_to_log( $message );
+
 	}
 
 	/**
@@ -146,7 +173,7 @@ class Alg_WC_Stock_Triggers_Admin {
 	 * @version 1.2.0
 	 * @since   1.1.1
 	 *
-	 * @todo    [next] (dev) *maybe* reduce i.e. `wc_maybe_reduce_stock_levels()`, and *maybe* increase i.e. `wc_maybe_increase_stock_levels()`?
+	 * @todo    (dev) *maybe* reduce i.e., `wc_maybe_reduce_stock_levels()`, and *maybe* increase i.e., `wc_maybe_increase_stock_levels()`?
 	 */
 	function ajax_order_items_added( $added_items, $order ) {
 		$func = ( 'reduce' === $this->on_ajax_order ? 'wc_reduce_stock_levels' : 'wc_increase_stock_levels' );
@@ -197,7 +224,7 @@ class Alg_WC_Stock_Triggers_Admin {
 	 *
 	 * @see     https://awhitepixel.com/blog/wordpress-admin-add-custom-bulk-action/
 	 *
-	 * @todo    [now] (feature) __( 'Force decrease stock', 'stock-triggers-for-woocommerce' ) and __( 'Force increase stock', 'stock-triggers-for-woocommerce' )
+	 * @todo    (feature) __( 'Force decrease stock', 'stock-triggers-for-woocommerce' ) and __( 'Force increase stock', 'stock-triggers-for-woocommerce' )
 	 */
 	function add_bulk_actions( $bulk_actions ) {
 		$bulk_actions['alg_wc_stock_triggers_decrease'] = __( 'Decrease stock', 'stock-triggers-for-woocommerce' );

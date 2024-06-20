@@ -48,8 +48,8 @@ class Alg_WC_Stock_Triggers_Core {
 	 * @version 1.6.0
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] (feature) force reduce/increase, i.e. `wc_increase_stock_levels()`, `wc_reduce_stock_levels()` vs `wc_maybe_increase_stock_levels()`, `wc_maybe_reduce_stock_levels()`
-	 * @todo    [maybe] (feature) add "Disable all triggers" option (i.e. "No triggers will be called for stock increase or decrease"): `if ( 'yes' === get_option( 'alg_wc_stock_triggers_never_reduce', 'no' ) ) { add_filter( 'woocommerce_payment_complete_reduce_order_stock', '__return_false' ); } else { $this->process_triggers(); }`?
+	 * @todo    (feature) force reduce/increase, i.e., `wc_increase_stock_levels()`, `wc_reduce_stock_levels()` vs `wc_maybe_increase_stock_levels()`, `wc_maybe_reduce_stock_levels()`
+	 * @todo    (feature) add "Disable all triggers" option (i.e., "No triggers will be called for stock increase or decrease"): `if ( 'yes' === get_option( 'alg_wc_stock_triggers_never_reduce', 'no' ) ) { add_filter( 'woocommerce_payment_complete_reduce_order_stock', '__return_false' ); } else { $this->process_triggers(); }`?
 	 */
 	function init() {
 
@@ -97,9 +97,9 @@ class Alg_WC_Stock_Triggers_Core {
 	 *
 	 * @note    it looks like `woocommerce_new_order` (and possibly `woocommerce_api_create_order`, `woocommerce_cli_create_order`, `kco_before_confirm_order`) actions can't be used (fired too early probably)
 	 *
-	 * @todo    [now] (dev) rename `Increase Stock` to `Restore Stock`?
-	 * @todo    [now] (dev) `woocommerce_checkout_order_processed` rename to "New order"
-	 * @todo    [maybe] (dev) `triggers`: add `woocommerce_checkout_process`?
+	 * @todo    (dev) rename `Increase Stock` to `Restore Stock`?
+	 * @todo    (dev) `woocommerce_checkout_order_processed` rename to "New order"
+	 * @todo    (dev) `triggers`: add `woocommerce_checkout_process`?
 	 */
 	function init_data() {
 
@@ -150,7 +150,7 @@ class Alg_WC_Stock_Triggers_Core {
 	 * @version 1.6.2
 	 * @since   1.0.0
 	 *
-	 * @todo    [next] (dev) `section_do_remove`: maybe we need to remove `wc_reduce_stock_levels` and `wc_increase_stock_levels` functions as well (optionally at least)?
+	 * @todo    (dev) `section_do_remove`: maybe we need to remove `wc_reduce_stock_levels` and `wc_increase_stock_levels` functions as well (optionally at least)?
 	 */
 	function process_triggers() {
 
@@ -200,7 +200,7 @@ class Alg_WC_Stock_Triggers_Core {
 	 * @version 1.6.0
 	 * @since   1.6.0
 	 *
-	 * @todo    [now] (feature) require at least one (vs "require all", as it is now)
+	 * @todo    (feature) require at least one (vs "require all", as it is now)
 	 */
 	function is_order_valid( $order_id, $section_id ) {
 

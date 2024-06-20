@@ -32,10 +32,10 @@ class Alg_WC_Stock_Triggers_Settings_General extends Alg_WC_Stock_Triggers_Setti
 	 * @version 1.6.6
 	 * @since   1.0.0
 	 *
-	 * @todo    [now] (desc) `alg_wc_stock_triggers_require_product` and `alg_wc_stock_triggers_require_product_cat`: better desc?
-	 * @todo    [now] (desc) `alg_wc_stock_triggers_force_can_update_order_stock`: better title/desc
-	 * @todo    [maybe] (dev) `alg_wc_stock_triggers`, `alg_wc_stock_triggers_require_product_cat`: add "Select all" / "Select none" buttons?
-	 * @todo    [maybe] (dev) split into separate "Decrease Stock" and "Increase Stock" sections?
+	 * @todo    (desc) `alg_wc_stock_triggers_require_product` and `alg_wc_stock_triggers_require_product_cat`: better desc?
+	 * @todo    (desc) `alg_wc_stock_triggers_force_can_update_order_stock`: better title/desc
+	 * @todo    (dev) `alg_wc_stock_triggers`, `alg_wc_stock_triggers_require_product_cat`: add "Select all" / "Select none" buttons?
+	 * @todo    (dev) split into separate "Decrease Stock" and "Increase Stock" sections?
 	 */
 	function get_settings() {
 

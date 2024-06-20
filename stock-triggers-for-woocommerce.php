@@ -3,12 +3,13 @@
 Plugin Name: Stock Triggers for WooCommerce
 Plugin URI: https://wpfactory.com/item/stock-triggers-for-woocommerce/
 Description: Automatic product stock increase/decrease actions for WooCommerce.
-Version: 1.6.7
+Version: 1.7.0
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: stock-triggers-for-woocommerce
 Domain Path: /langs
-WC tested up to: 8.1
+WC tested up to: 9.0
+Requires Plugins: woocommerce
 */
 
 defined( 'ABSPATH' ) || exit;
@@ -17,7 +18,7 @@ if ( 'stock-triggers-for-woocommerce.php' === basename( __FILE__ ) ) {
 	/**
 	 * Check if Pro plugin version is activated.
 	 *
-	 * @version 1.4.0
+	 * @version 1.7.0
 	 * @since   1.4.0
 	 */
 	$plugin = 'stock-triggers-for-woocommerce-pro/stock-triggers-for-woocommerce-pro.php';
@@ -25,11 +26,12 @@ if ( 'stock-triggers-for-woocommerce.php' === basename( __FILE__ ) ) {
 		in_array( $plugin, (array) get_option( 'active_plugins', array() ), true ) ||
 		( is_multisite() && array_key_exists( $plugin, (array) get_site_option( 'active_sitewide_plugins', array() ) ) )
 	) {
+		defined( 'ALG_WC_STOCK_TRIGGERS_FILE_FREE' ) || define( 'ALG_WC_STOCK_TRIGGERS_FILE_FREE', __FILE__ );
 		return;
 	}
 }
 
-defined( 'ALG_WC_STOCK_TRIGGERS_VERSION' ) || define( 'ALG_WC_STOCK_TRIGGERS_VERSION', '1.6.7' );
+defined( 'ALG_WC_STOCK_TRIGGERS_VERSION' ) || define( 'ALG_WC_STOCK_TRIGGERS_VERSION', '1.7.0' );
 
 defined( 'ALG_WC_STOCK_TRIGGERS_FILE' ) || define( 'ALG_WC_STOCK_TRIGGERS_FILE', __FILE__ );
 
