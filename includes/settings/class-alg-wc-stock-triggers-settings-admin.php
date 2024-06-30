@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Admin Section Settings
  *
- * @version 1.6.1
+ * @version 1.7.1
  * @since   1.6.1
  *
  * @author  Algoritmika Ltd
@@ -29,7 +29,7 @@ class Alg_WC_Stock_Triggers_Settings_Admin extends Alg_WC_Stock_Triggers_Setting
 	/**
 	 * get_settings.
 	 *
-	 * @version 1.6.1
+	 * @version 1.7.1
 	 * @since   1.6.1
 	 *
 	 * @todo    (desc) `alg_wc_stock_triggers_shop_order_bulk_actions`
@@ -81,9 +81,11 @@ class Alg_WC_Stock_Triggers_Settings_Admin extends Alg_WC_Stock_Triggers_Setting
 				'type'     => 'select',
 				'class'    => 'chosen_select',
 				'options'  => array(
-					'no'     => __( 'Default', 'stock-triggers-for-woocommerce' ),
-					'yes'    => __( 'Increase', 'stock-triggers-for-woocommerce' ), // mislabeled, should be `increase`
-					'reduce' => __( 'Decrease', 'stock-triggers-for-woocommerce' ),
+					'no'             => __( 'Default', 'stock-triggers-for-woocommerce' ),
+					'yes'            => __( 'Increase', 'stock-triggers-for-woocommerce' ), // mislabeled, should be `increase`
+					'reduce'         => __( 'Decrease', 'stock-triggers-for-woocommerce' ),
+					'maybe_increase' => __( 'Maybe increase', 'stock-triggers-for-woocommerce' ),
+					'maybe_reduce'   => __( 'Maybe decrease', 'stock-triggers-for-woocommerce' ),
 				),
 			),
 			array(

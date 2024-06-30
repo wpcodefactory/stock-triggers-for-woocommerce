@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Admin Class
  *
- * @version 1.7.0
+ * @version 1.7.1
  * @since   1.6.0
  *
  * @author  Algoritmika Ltd
@@ -170,14 +170,27 @@ class Alg_WC_Stock_Triggers_Admin {
 	/**
 	 * ajax_order_items_added.
 	 *
-	 * @version 1.2.0
+	 * @version 1.7.1
 	 * @since   1.1.1
-	 *
-	 * @todo    (dev) *maybe* reduce i.e., `wc_maybe_reduce_stock_levels()`, and *maybe* increase i.e., `wc_maybe_increase_stock_levels()`?
 	 */
 	function ajax_order_items_added( $added_items, $order ) {
-		$func = ( 'reduce' === $this->on_ajax_order ? 'wc_reduce_stock_levels' : 'wc_increase_stock_levels' );
+
+		switch ( $this->on_ajax_order ) {
+			case 'maybe_reduce':
+				$func = 'wc_maybe_reduce_stock_levels';
+				break;
+			case 'maybe_increase':
+				$func = 'wc_maybe_increase_stock_levels';
+				break;
+			case 'reduce':
+				$func = 'wc_reduce_stock_levels';
+				break;
+			default:
+				$func = 'wc_increase_stock_levels';
+		}
+
 		$func( $order->get_id() );
+
 	}
 
 	/**

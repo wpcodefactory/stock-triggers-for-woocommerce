@@ -3,7 +3,7 @@ Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmu
 Tags: woocommerce, stock, woo commerce
 Requires at least: 4.4
 Tested up to: 6.5
-Stable tag: 1.7.0
+Stable tag: 1.7.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -47,6 +47,9 @@ In addition, there are a number of **admin** options, like running decrease or i
 3. Start by visiting plugin settings at "WooCommerce > Settings > Stock Triggers".
 
 == Changelog ==
+
+= 1.7.1 - 30/06/2024 =
+* Dev - Admin - Admin new order - "Maybe increase" and "Maybe decrease" options added.
 
 = 1.7.0 - 20/06/2024 =
 * Dev - "High-Performance Order Storage (HPOS)" compatibility.

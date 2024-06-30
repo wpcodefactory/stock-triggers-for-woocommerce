@@ -3,26 +3,26 @@
 msgid "Adjusted stock: %s"
 msgstr ""
 
-#: includes/class-alg-wc-stock-triggers-admin.php:195
+#: includes/class-alg-wc-stock-triggers-admin.php:208
 msgid "stock decrease"
 msgstr ""
 
-#: includes/class-alg-wc-stock-triggers-admin.php:196
+#: includes/class-alg-wc-stock-triggers-admin.php:209
 msgid "stock increase"
 msgstr ""
 
-#: includes/class-alg-wc-stock-triggers-admin.php:198
+#: includes/class-alg-wc-stock-triggers-admin.php:211
 #, php-format
 msgid "%d orders processed (%s)."
 msgstr ""
 
-#: includes/class-alg-wc-stock-triggers-admin.php:230
-#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:93
+#: includes/class-alg-wc-stock-triggers-admin.php:243
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:95
 msgid "Decrease stock"
 msgstr ""
 
-#: includes/class-alg-wc-stock-triggers-admin.php:231
-#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:94
+#: includes/class-alg-wc-stock-triggers-admin.php:244
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:96
 msgid "Increase stock"
 msgstr ""
 
@@ -138,8 +138,8 @@ msgid ""
 msgstr ""
 
 #: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:53
-#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:91
-#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:114
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:93
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:116
 #: includes/settings/class-alg-wc-stock-triggers-settings-general.php:119
 #: includes/settings/class-alg-wc-stock-triggers-settings-general.php:128
 msgid "Enable"
@@ -171,34 +171,42 @@ msgstr ""
 msgid "Decrease"
 msgstr ""
 
-#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:90
-msgid "Bulk actions"
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:87
+msgid "Maybe increase"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:88
+msgid "Maybe decrease"
 msgstr ""
 
 #: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:92
+msgid "Bulk actions"
+msgstr ""
+
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:94
 #, php-format
 msgid ""
 "Will add \"%s\" and \"%s\" actions to the \"Bulk actions\" dropdown in %s."
 msgstr ""
 
-#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:95
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:97
 msgid "admin orders list"
 msgstr ""
 
-#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:108
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:110
 msgid "Advanced Options"
 msgstr ""
 
-#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:113
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:115
 msgid "Debug"
 msgstr ""
 
-#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:115
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:117
 #, php-format
 msgid "Will add a log to %s."
 msgstr ""
 
-#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:116
+#: includes/settings/class-alg-wc-stock-triggers-settings-admin.php:118
 msgid "WooCommerce > Status > Logs"
 msgstr ""
 
