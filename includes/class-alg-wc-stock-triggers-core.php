@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Core Class
  *
- * @version 1.6.6
+ * @version 1.7.3
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -92,7 +92,7 @@ class Alg_WC_Stock_Triggers_Core {
 	/**
 	 * init_data.
 	 *
-	 * @version 1.3.1
+	 * @version 1.7.3
 	 * @since   1.0.0
 	 *
 	 * @note    it looks like `woocommerce_new_order` (and possibly `woocommerce_api_create_order`, `woocommerce_cli_create_order`, `kco_before_confirm_order`) actions can't be used (fired too early probably)
@@ -105,15 +105,16 @@ class Alg_WC_Stock_Triggers_Core {
 
 		// Triggers
 		$this->triggers = apply_filters( 'alg_wc_stock_triggers_list', array(
-			'woocommerce_order_status_cancelled'   => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Cancelled', 'Order status', 'woocommerce' ) ),
-			'woocommerce_order_status_completed'   => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Completed', 'Order status', 'woocommerce' ) ),
-			'woocommerce_order_status_on-hold'     => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'On hold', 'Order status', 'woocommerce' ) ),
-			'woocommerce_order_status_pending'     => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Pending payment', 'Order status', 'woocommerce' ) ),
-			'woocommerce_order_status_processing'  => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Processing', 'Order status', 'woocommerce' ) ),
-			'woocommerce_order_status_failed'      => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Failed', 'Order status', 'woocommerce' ) ),
-			'woocommerce_order_status_refunded'    => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Refunded', 'Order status', 'woocommerce' ) ),
-			'woocommerce_payment_complete'         => __( 'Payment complete', 'stock-triggers-for-woocommerce' ),
-			'woocommerce_checkout_order_processed' => __( 'Checkout order processed', 'stock-triggers-for-woocommerce' ),
+			'woocommerce_order_status_cancelled'     => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Cancelled', 'Order status', 'woocommerce' ) ),
+			'woocommerce_order_status_completed'     => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Completed', 'Order status', 'woocommerce' ) ),
+			'woocommerce_order_status_on-hold'       => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'On hold', 'Order status', 'woocommerce' ) ),
+			'woocommerce_order_status_pending'       => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Pending payment', 'Order status', 'woocommerce' ) ),
+			'woocommerce_order_status_processing'    => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Processing', 'Order status', 'woocommerce' ) ),
+			'woocommerce_order_status_failed'        => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Failed', 'Order status', 'woocommerce' ) ),
+			'woocommerce_order_status_refunded'      => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Refunded', 'Order status', 'woocommerce' ) ),
+			'woocommerce_payment_complete'           => __( 'Payment complete', 'stock-triggers-for-woocommerce' ),
+			'woocommerce_checkout_order_processed'   => __( 'Checkout order processed', 'stock-triggers-for-woocommerce' ),
+			'woocommerce_checkout_update_order_meta' => __( 'Checkout update order meta', 'stock-triggers-for-woocommerce' ),
 		) );
 		asort( $this->triggers );
 

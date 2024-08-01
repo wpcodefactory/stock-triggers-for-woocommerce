@@ -3,7 +3,7 @@ Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmu
 Tags: woocommerce, stock, woo commerce
 Requires at least: 4.4
 Tested up to: 6.6
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -48,7 +48,10 @@ In addition, there are a number of **admin** options, like running decrease or i
 
 == Changelog ==
 
-= 1.7.2 - 31/07/2023 =
+= 1.7.3 - 01/08/2024 =
+* Dev - Triggers - "Checkout update order meta" trigger added.
+
+= 1.7.2 - 31/07/2024 =
 * WC tested up to: 9.1.
 * Tested up to: 6.6.
 
