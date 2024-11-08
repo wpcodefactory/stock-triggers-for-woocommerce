@@ -1,9 +1,9 @@
-=== Stock Triggers for WooCommerce ===
-Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
+=== Automated Stock Update Triggers for WooCommerce ===
+Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas
 Tags: woocommerce, stock, woo commerce
 Requires at least: 4.4
 Tested up to: 6.6
-Stable tag: 1.7.3
+Stable tag: 1.8.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -44,9 +44,19 @@ In addition, there are a number of **admin** options, like running decrease or i
 
 1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the "Plugins" menu in WordPress.
-3. Start by visiting plugin settings at "WooCommerce > Settings > Stock Triggers".
+3. Start by visiting plugin settings at "WPFactory > Stock Triggers".
 
 == Changelog ==
+
+= 1.8.0 - 08/11/2024 =
+* Dev - Security - Output escaped.
+* Dev - Plugin settings moved to the "WPFactory" menu.
+* Dev - "Recommendations" added.
+* Dev - "Key Manager" added.
+* Dev - Code refactoring.
+* Dev - Coding standards improved.
+* WC tested up to: 9.3.
+* Plugin name updated.
 
 = 1.7.3 - 01/08/2024 =
 * Dev - Triggers - "Checkout update order meta" trigger added.

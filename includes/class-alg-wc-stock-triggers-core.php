@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Core Class
  *
- * @version 1.7.3
+ * @version 1.8.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -45,7 +45,7 @@ class Alg_WC_Stock_Triggers_Core {
 	/**
 	 * init.
 	 *
-	 * @version 1.6.0
+	 * @version 1.8.0
 	 * @since   1.0.0
 	 *
 	 * @todo    (feature) force reduce/increase, i.e., `wc_increase_stock_levels()`, `wc_reduce_stock_levels()` vs `wc_maybe_increase_stock_levels()`, `wc_maybe_reduce_stock_levels()`
@@ -73,7 +73,7 @@ class Alg_WC_Stock_Triggers_Core {
 		}
 
 		// Admin
-		require_once( 'class-alg-wc-stock-triggers-admin.php' );
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-stock-triggers-admin.php';
 
 	}
 
@@ -105,13 +105,41 @@ class Alg_WC_Stock_Triggers_Core {
 
 		// Triggers
 		$this->triggers = apply_filters( 'alg_wc_stock_triggers_list', array(
-			'woocommerce_order_status_cancelled'     => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Cancelled', 'Order status', 'woocommerce' ) ),
-			'woocommerce_order_status_completed'     => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Completed', 'Order status', 'woocommerce' ) ),
-			'woocommerce_order_status_on-hold'       => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'On hold', 'Order status', 'woocommerce' ) ),
-			'woocommerce_order_status_pending'       => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Pending payment', 'Order status', 'woocommerce' ) ),
-			'woocommerce_order_status_processing'    => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Processing', 'Order status', 'woocommerce' ) ),
-			'woocommerce_order_status_failed'        => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Failed', 'Order status', 'woocommerce' ) ),
-			'woocommerce_order_status_refunded'      => sprintf( __( 'Order status: %s', 'stock-triggers-for-woocommerce' ), _x( 'Refunded', 'Order status', 'woocommerce' ) ),
+			'woocommerce_order_status_cancelled'     => sprintf(
+				/* Translators: %s: Status name. */
+				__( 'Order status: %s', 'stock-triggers-for-woocommerce' ),
+				_x( 'Cancelled', 'Order status', 'woocommerce' )       // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+			),
+			'woocommerce_order_status_completed'     => sprintf(
+				/* Translators: %s: Status name. */
+				__( 'Order status: %s', 'stock-triggers-for-woocommerce' ),
+				_x( 'Completed', 'Order status', 'woocommerce' )       // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+			),
+			'woocommerce_order_status_on-hold'       => sprintf(
+				/* Translators: %s: Status name. */
+				__( 'Order status: %s', 'stock-triggers-for-woocommerce' ),
+				_x( 'On hold', 'Order status', 'woocommerce' )         // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+			),
+			'woocommerce_order_status_pending'       => sprintf(
+				/* Translators: %s: Status name. */
+				__( 'Order status: %s', 'stock-triggers-for-woocommerce' ),
+				_x( 'Pending payment', 'Order status', 'woocommerce' ) // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+			),
+			'woocommerce_order_status_processing'    => sprintf(
+				/* Translators: %s: Status name. */
+				__( 'Order status: %s', 'stock-triggers-for-woocommerce' ),
+				_x( 'Processing', 'Order status', 'woocommerce' )      // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+			),
+			'woocommerce_order_status_failed'        => sprintf(
+				/* Translators: %s: Status name. */
+				__( 'Order status: %s', 'stock-triggers-for-woocommerce' ),
+				_x( 'Failed', 'Order status', 'woocommerce' )          // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+			),
+			'woocommerce_order_status_refunded'      => sprintf(
+				/* Translators: %s: Status name. */
+				__( 'Order status: %s', 'stock-triggers-for-woocommerce' ),
+				_x( 'Refunded', 'Order status', 'woocommerce' )        // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+			),
 			'woocommerce_payment_complete'           => __( 'Payment complete', 'stock-triggers-for-woocommerce' ),
 			'woocommerce_checkout_order_processed'   => __( 'Checkout order processed', 'stock-triggers-for-woocommerce' ),
 			'woocommerce_checkout_update_order_meta' => __( 'Checkout update order meta', 'stock-triggers-for-woocommerce' ),

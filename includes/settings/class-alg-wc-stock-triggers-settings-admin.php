@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Admin Section Settings
  *
- * @version 1.7.1
+ * @version 1.8.0
  * @since   1.6.1
  *
  * @author  Algoritmika Ltd
@@ -29,7 +29,7 @@ class Alg_WC_Stock_Triggers_Settings_Admin extends Alg_WC_Stock_Triggers_Setting
 	/**
 	 * get_settings.
 	 *
-	 * @version 1.7.1
+	 * @version 1.8.0
 	 * @since   1.6.1
 	 *
 	 * @todo    (desc) `alg_wc_stock_triggers_shop_order_bulk_actions`
@@ -57,20 +57,22 @@ class Alg_WC_Stock_Triggers_Settings_Admin extends Alg_WC_Stock_Triggers_Setting
 			),
 			array(
 				'desc_tip' => __( 'Order status(es)', 'stock-triggers-for-woocommerce' ),
-				'desc'     => apply_filters( 'alg_wc_stock_triggers_settings',
-					'If you need <strong>custom order statuses</strong> to be added to the list, please get <a href="https://wpfactory.com/item/stock-triggers-for-woocommerce/" target="_blank">Stock Triggers for WooCommerce Pro</a> plugin version.' ),
+				'desc'     => apply_filters(
+					'alg_wc_stock_triggers_settings',
+					'If you need <strong>custom order statuses</strong> to be added to the list, please get <a href="https://wpfactory.com/item/stock-triggers-for-woocommerce/" target="_blank">Stock Triggers for WooCommerce Pro</a> plugin version.'
+				),
 				'id'       => 'alg_wc_stock_triggers_adjust_line_item_product_stock_statuses',
 				'default'  => array( 'processing', 'completed', 'on-hold' ),
 				'type'     => 'multiselect',
 				'class'    => 'chosen_select',
 				'options'  => apply_filters( 'alg_wc_stock_triggers_order_status_list', array(
-					'pending'    => _x( 'Pending payment', 'Order status', 'woocommerce' ),
-					'processing' => _x( 'Processing', 'Order status', 'woocommerce' ),
-					'on-hold'    => _x( 'On hold', 'Order status', 'woocommerce' ),
-					'completed'  => _x( 'Completed', 'Order status', 'woocommerce' ),
-					'cancelled'  => _x( 'Cancelled', 'Order status', 'woocommerce' ),
-					'refunded'   => _x( 'Refunded', 'Order status', 'woocommerce' ),
-					'failed'     => _x( 'Failed', 'Order status', 'woocommerce' ),
+					'pending'    => _x( 'Pending payment', 'Order status', 'woocommerce' ), // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+					'processing' => _x( 'Processing', 'Order status', 'woocommerce' ),      // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+					'on-hold'    => _x( 'On hold', 'Order status', 'woocommerce' ),         // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+					'completed'  => _x( 'Completed', 'Order status', 'woocommerce' ),       // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+					'cancelled'  => _x( 'Cancelled', 'Order status', 'woocommerce' ),       // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+					'refunded'   => _x( 'Refunded', 'Order status', 'woocommerce' ),        // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+					'failed'     => _x( 'Failed', 'Order status', 'woocommerce' ),          // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
 				) ),
 			),
 			array(
@@ -91,10 +93,15 @@ class Alg_WC_Stock_Triggers_Settings_Admin extends Alg_WC_Stock_Triggers_Setting
 			array(
 				'title'    => __( 'Bulk actions', 'stock-triggers-for-woocommerce' ),
 				'desc'     => __( 'Enable', 'stock-triggers-for-woocommerce' ),
-				'desc_tip' => sprintf( __( 'Will add "%s" and "%s" actions to the "Bulk actions" dropdown in %s.', 'stock-triggers-for-woocommerce' ),
+				'desc_tip' => sprintf(
+					/* Translators: %1$s: Action name, %2$s: Action name, %3$s: Link. */
+					__( 'Will add "%1$s" and "%2$s" actions to the "Bulk actions" dropdown in %3$s.', 'stock-triggers-for-woocommerce' ),
 					__( 'Decrease stock', 'stock-triggers-for-woocommerce' ),
 					__( 'Increase stock', 'stock-triggers-for-woocommerce' ),
-					'<a href="' . admin_url( 'edit.php?post_type=shop_order' ) . '">' . __( 'admin orders list', 'stock-triggers-for-woocommerce' ) . '</a>' ),
+					'<a href="' . admin_url( 'edit.php?post_type=shop_order' ) . '">' .
+						__( 'admin orders list', 'stock-triggers-for-woocommerce' ) .
+					'</a>'
+				),
 				'id'       => 'alg_wc_stock_triggers_shop_order_bulk_actions',
 				'default'  => 'no',
 				'type'     => 'checkbox',
@@ -114,8 +121,13 @@ class Alg_WC_Stock_Triggers_Settings_Admin extends Alg_WC_Stock_Triggers_Setting
 			array(
 				'title'    => __( 'Debug', 'stock-triggers-for-woocommerce' ),
 				'desc'     => __( 'Enable', 'stock-triggers-for-woocommerce' ),
-				'desc_tip' => sprintf( __( 'Will add a log to %s.', 'stock-triggers-for-woocommerce' ),
-					'<a href="' . admin_url( 'admin.php?page=wc-status&tab=logs' ) . '">' . __( 'WooCommerce > Status > Logs', 'stock-triggers-for-woocommerce' ) . '</a>' ),
+				'desc_tip' => sprintf(
+					/* Translators: %s: Link. */
+					__( 'Will add a log to %s.', 'stock-triggers-for-woocommerce' ),
+					'<a href="' . admin_url( 'admin.php?page=wc-status&tab=logs' ) . '">' .
+						__( 'WooCommerce > Status > Logs', 'stock-triggers-for-woocommerce' ) .
+					'</a>'
+				),
 				'id'       => 'alg_wc_stock_triggers_debug',
 				'default'  => 'no',
 				'type'     => 'checkbox',

@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Settings
  *
- * @version 1.6.1
+ * @version 1.8.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -17,17 +17,20 @@ class Alg_WC_Stock_Triggers_Settings extends WC_Settings_Page {
 	/**
 	 * Constructor.
 	 *
-	 * @version 1.6.1
+	 * @version 1.8.0
 	 * @since   1.0.0
 	 */
 	function __construct() {
+
 		$this->id    = 'alg_wc_stock_triggers';
 		$this->label = __( 'Stock Triggers', 'stock-triggers-for-woocommerce' );
 		parent::__construct();
+
 		// Sections
-		require_once( 'class-alg-wc-stock-triggers-settings-section.php' );
-		require_once( 'class-alg-wc-stock-triggers-settings-general.php' );
-		require_once( 'class-alg-wc-stock-triggers-settings-admin.php' );
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-stock-triggers-settings-section.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-stock-triggers-settings-general.php';
+		require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-stock-triggers-settings-admin.php';
+
 	}
 
 	/**
@@ -81,12 +84,13 @@ class Alg_WC_Stock_Triggers_Settings extends WC_Settings_Page {
 	/**
 	 * admin_notices_settings_reset_success.
 	 *
-	 * @version 1.0.0
+	 * @version 1.8.0
 	 * @since   1.0.0
 	 */
 	function admin_notices_settings_reset_success() {
 		echo '<div class="notice notice-success is-dismissible"><p><strong>' .
-			__( 'Your settings have been reset.', 'stock-triggers-for-woocommerce' ) . '</strong></p></div>';
+			esc_html__( 'Your settings have been reset.', 'stock-triggers-for-woocommerce' ) .
+		'</strong></p></div>';
 	}
 
 	/**

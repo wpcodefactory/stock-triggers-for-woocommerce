@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Admin Class
  *
- * @version 1.7.1
+ * @version 1.8.0
  * @since   1.6.0
  *
  * @author  Algoritmika Ltd
@@ -159,9 +159,15 @@ class Alg_WC_Stock_Triggers_Admin {
 				! empty( $this->adjust_line_item_product_stock_data['order_id'] ) && $order_id == $this->adjust_line_item_product_stock_data['order_id'] &&
 				isset( $this->adjust_line_item_product_stock_data['order'] ) && is_a( $this->adjust_line_item_product_stock_data['order'], 'WC_Order' )
 			) {
-				/* translators: %s item name. */
-				$this->adjust_line_item_product_stock_data['order']->add_order_note( sprintf( __( 'Adjusted stock: %s', 'woocommerce' ),
-					implode( ', ', $this->adjust_line_item_product_stock_data['qty_change_order_notes'] ) ), false, true );
+				$this->adjust_line_item_product_stock_data['order']->add_order_note(
+					sprintf(
+						/* Translators: %s: Item name. */
+						__( 'Adjusted stock: %s', 'woocommerce' ), // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+						implode( ', ', $this->adjust_line_item_product_stock_data['qty_change_order_notes'] )
+					),
+					false,
+					true
+				);
 			}
 			unset( $this->adjust_line_item_product_stock_data );
 		}
@@ -196,19 +202,30 @@ class Alg_WC_Stock_Triggers_Admin {
 	/**
 	 * bulk_actions_notice.
 	 *
-	 * @version 1.5.3
+	 * @version 1.8.0
 	 * @since   1.5.3
 	 *
 	 * @see     https://awhitepixel.com/blog/wordpress-admin-add-custom-bulk-action/
 	 */
 	function bulk_actions_notice() {
-		if ( ! empty( $_REQUEST['alg_wc_stock_triggers_count'] ) && ! empty( $_REQUEST['alg_wc_stock_triggers_action'] ) ) {
-			$count  = ( int ) $_REQUEST['alg_wc_stock_triggers_count'];
-			$action = ( 'alg_wc_stock_triggers_decrease' === wc_clean( $_REQUEST['alg_wc_stock_triggers_action'] ) ?
+		if (
+			! empty( $_REQUEST['alg_wc_stock_triggers_count'] ) && // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			! empty( $_REQUEST['alg_wc_stock_triggers_action'] )   // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		) {
+			$count  = wc_clean( wp_unslash( $_REQUEST['alg_wc_stock_triggers_count'] ) );  // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Recommended
+			$action = wc_clean( wp_unslash( $_REQUEST['alg_wc_stock_triggers_action'] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Recommended
+			$action = (
+				'alg_wc_stock_triggers_decrease' === $action ?
 				__( 'stock decrease', 'stock-triggers-for-woocommerce' ) :
-				__( 'stock increase', 'stock-triggers-for-woocommerce' ) );
+				__( 'stock increase', 'stock-triggers-for-woocommerce' )
+			);
 			echo '<div class="notice notice-success is-dismissible"><p>' .
-				sprintf( __( '%d orders processed (%s).', 'stock-triggers-for-woocommerce' ), $count, $action ) .
+				sprintf(
+					/* Translators: %1$d: Order count, %2$s: Action name. */
+					esc_html__( '%1$d orders processed (%2$s).', 'stock-triggers-for-woocommerce' ),
+					(int) $count,
+					esc_html( $action )
+				) .
 			'</p></div>';
 		}
 	}
