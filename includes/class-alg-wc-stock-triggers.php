@@ -2,7 +2,7 @@
 /**
  * Stock Triggers for WooCommerce - Main Class
  *
- * @version 1.8.0
+ * @version 1.8.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd
@@ -37,7 +37,7 @@ final class Alg_WC_Stock_Triggers {
 	protected static $_instance = null;
 
 	/**
-	 * Main Alg_WC_Stock_Triggers Instance
+	 * Main Alg_WC_Stock_Triggers Instance.
 	 *
 	 * Ensures only one instance of Alg_WC_Stock_Triggers is loaded or can be loaded.
 	 *
@@ -115,7 +115,7 @@ final class Alg_WC_Stock_Triggers {
 	 * @version 1.7.0
 	 * @since   1.7.0
 	 *
-	 * @see     https://github.com/woocommerce/woocommerce/wiki/High-Performance-Order-Storage-Upgrade-Recipe-Book#declaring-extension-incompatibility
+	 * @see     https://developer.woocommerce.com/docs/features/high-performance-order-storage/recipe-book/
 	 */
 	function wc_declare_compatibility() {
 		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
@@ -125,7 +125,11 @@ final class Alg_WC_Stock_Triggers {
 				array( ALG_WC_STOCK_TRIGGERS_FILE )
 			);
 			foreach ( $files as $file ) {
-				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', $file, true );
+				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility(
+					'custom_order_tables',
+					$file,
+					true
+				);
 			}
 		}
 	}
@@ -144,22 +148,34 @@ final class Alg_WC_Stock_Triggers {
 	/**
 	 * admin.
 	 *
-	 * @version 1.8.0
+	 * @version 1.8.1
 	 * @since   1.0.0
 	 */
 	function admin() {
 
 		// Action links
-		add_filter( 'plugin_action_links_' . plugin_basename( ALG_WC_STOCK_TRIGGERS_FILE ), array( $this, 'action_links' ) );
+		add_filter(
+			'plugin_action_links_' . plugin_basename( ALG_WC_STOCK_TRIGGERS_FILE ),
+			array( $this, 'action_links' )
+		);
 
 		// "Recommendations" page
-		$this->add_cross_selling_library();
+		add_action(
+			'init',
+			array( $this, 'add_cross_selling_library' )
+		);
 
 		// WC Settings tab as WPFactory submenu item
-		$this->move_wc_settings_tab_to_wpfactory_menu();
+		add_action(
+			'init',
+			array( $this, 'move_wc_settings_tab_to_wpfactory_menu' )
+		);
 
 		// Settings
-		add_filter( 'woocommerce_get_settings_pages', array( $this, 'add_woocommerce_settings_tab' ) );
+		add_filter(
+			'woocommerce_get_settings_pages',
+			array( $this, 'add_woocommerce_settings_tab' )
+		);
 
 		// Version update
 		if ( get_option( 'alg_wc_stock_triggers_version', '' ) !== $this->version ) {
@@ -179,14 +195,17 @@ final class Alg_WC_Stock_Triggers {
 	 */
 	function action_links( $links ) {
 		$custom_links = array();
+
 		$custom_links[] = '<a href="' . admin_url( 'admin.php?page=wc-settings&tab=alg_wc_stock_triggers' ) . '">' .
 			__( 'Settings', 'stock-triggers-for-woocommerce' ) .
 		'</a>';
+
 		if ( 'stock-triggers-for-woocommerce.php' === basename( ALG_WC_STOCK_TRIGGERS_FILE ) ) {
 			$custom_links[] = '<a target="_blank" style="font-weight: bold; color: green;" href="https://wpfactory.com/item/stock-triggers-for-woocommerce/">' .
 				__( 'Go Pro', 'stock-triggers-for-woocommerce' ) .
 			'</a>';
 		}
+
 		return array_merge( $custom_links, $links );
 	}
 
@@ -211,7 +230,7 @@ final class Alg_WC_Stock_Triggers {
 	/**
 	 * move_wc_settings_tab_to_wpfactory_menu.
 	 *
-	 * @version 1.8.0
+	 * @version 1.8.1
 	 * @since   1.8.0
 	 */
 	function move_wc_settings_tab_to_wpfactory_menu() {
@@ -230,6 +249,10 @@ final class Alg_WC_Stock_Triggers {
 			'wc_settings_tab_id' => 'alg_wc_stock_triggers',
 			'menu_title'         => __( 'Stock Triggers', 'stock-triggers-for-woocommerce' ),
 			'page_title'         => __( 'Stock Triggers', 'stock-triggers-for-woocommerce' ),
+			'plugin_icon'        => array(
+				'get_url_method'    => 'wporg_plugins_api',
+				'wporg_plugin_slug' => 'stock-triggers-for-woocommerce',
+			),
 		) );
 
 	}

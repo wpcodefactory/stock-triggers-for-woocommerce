@@ -204,8 +204,6 @@ class Alg_WC_Stock_Triggers_Admin {
 	 *
 	 * @version 1.8.0
 	 * @since   1.5.3
-	 *
-	 * @see     https://awhitepixel.com/blog/wordpress-admin-add-custom-bulk-action/
 	 */
 	function bulk_actions_notice() {
 		if (
@@ -235,8 +233,6 @@ class Alg_WC_Stock_Triggers_Admin {
 	 *
 	 * @version 1.5.3
 	 * @since   1.5.3
-	 *
-	 * @see     https://awhitepixel.com/blog/wordpress-admin-add-custom-bulk-action/
 	 */
 	function handle_bulk_actions( $redirect_url, $action, $post_ids ) {
 		if ( in_array( $action, array( 'alg_wc_stock_triggers_decrease', 'alg_wc_stock_triggers_increase' ) ) ) {
