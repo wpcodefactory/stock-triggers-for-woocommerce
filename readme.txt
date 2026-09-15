@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, anbinder, karzin, omardabbas
 Tags: woocommerce, stock, woo commerce
 Requires at least: 4.4
-Tested up to: 7.0
-Stable tag: 1.8.3
+Tested up to: 7.1
+Stable tag: 1.9.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -48,9 +48,18 @@ In addition, there are a number of **admin** options, like running decrease or i
 
 == Changelog ==
 
+= 1.9.0 - 15/09/2026 =
+* Dev - Code refactoring.
+* Dev - Coding standards improved.
+* Dev - WPFactory Admin Menu - Library updated (to v1.1.2).
+* Dev - WPFactory Cross-Selling - Library updated (to v1.1.5).
+* Dev - WPFactory Key Manager - Library updated (to v1.1.1).
+* WC tested up to: 11.1.
+* Tested up to: 7.1.
+
 = 1.8.3 - 24/05/2026 =
-* Tested up to: 7.0.
 * WC tested up to: 10.7.
+* Tested up to: 7.0.
 
 = 1.8.2 - 09/09/2025 =
 * WC tested up to: 10.1.
