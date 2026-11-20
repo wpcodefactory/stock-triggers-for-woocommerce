@@ -3,13 +3,13 @@
  * Plugin Name: Automated Stock Update Triggers for WooCommerce
  * Plugin URI: https://wpfactory.com/item/stock-triggers-for-woocommerce/
  * Description: Automatic product stock increase/decrease actions for WooCommerce.
- * Version: 1.9.0
+ * Version: 1.9.1
  * Author: WPFactory
  * Author URI: https://wpfactory.com
  * Requires at least: 4.4
  * Text Domain: stock-triggers-for-woocommerce
  * Domain Path: /langs
- * WC tested up to: 11.1
+ * WC tested up to: 11.3
  * Requires Plugins: woocommerce
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -51,7 +51,7 @@ if ( 'stock-triggers-for-woocommerce.php' === basename( __FILE__ ) ) {
  * @version 1.0.0
  * @since   1.0.0
  */
-defined( 'ALG_WC_STOCK_TRIGGERS_VERSION' ) || define( 'ALG_WC_STOCK_TRIGGERS_VERSION', '1.9.0' );
+defined( 'ALG_WC_STOCK_TRIGGERS_VERSION' ) || define( 'ALG_WC_STOCK_TRIGGERS_VERSION', '1.9.1' );
 
 /**
  * Plugin file.

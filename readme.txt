@@ -3,7 +3,7 @@ Contributors: wpcodefactory, anbinder, karzin, omardabbas
 Tags: woocommerce, stock, woo commerce
 Requires at least: 4.4
 Tested up to: 7.1
-Stable tag: 1.9.0
+Stable tag: 1.9.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -47,6 +47,11 @@ In addition, there are a number of **admin** options, like running decrease or i
 3. Start by visiting plugin settings at "WPFactory > Stock Triggers".
 
 == Changelog ==
+
+= 1.9.1 - 21/11/2026 =
+* WC tested up to: 11.3.
+* Dev - WPFactory Admin Menu - Library updated (to v1.1.4).
+* Dev - WPFactory Cross-Selling - Library updated (to v1.1.7).
 
 = 1.9.0 - 15/09/2026 =
 * Dev - Code refactoring.
